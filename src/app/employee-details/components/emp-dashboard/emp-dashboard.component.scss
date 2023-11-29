@@ -1,0 +1,28 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .toolbar{
+     height: 8vh;
+     z-index: 0;
+  }
+  .button_container {
+   position: fixed;
+   bottom: 70px; 
+   right: 48px;
+ }
+ .example-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #555;
+  z-index: 1;
+}
+.sideNav{
+  width:200px
+}
+.employee-button{
+  width: 100%;
+  display: list-item;
+  
+}
+  

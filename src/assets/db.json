@@ -1,0 +1,38 @@
+{
+  "Employee": [
+    {
+      "FirstName": "Venkatesh",
+      "LastName": "D",
+      "Email": "sdgdg",
+      "Experience": 4,
+      "DOB": "2023-10-31T18:30:00.000Z",
+      "Gender": "Male",
+      "State": "dfgfg",
+      "Pincode": 43534,
+      "Address": "fdgfg",
+      "Dapartment": "hbkgk",
+      "MartialStatus": "Married",
+      "PhoneNumber": [
+        "6457655656"
+      ],
+      "id": 1
+    },
+    {
+      "FirstName": "Pavan",
+      "LastName": "K",
+      "Email": "dgfdsh@dgfgds",
+      "Experience": 3,
+      "DOB": "2023-11-08T18:30:00.000Z",
+      "Gender": "Male",
+      "State": "Andhra Pradesh",
+      "Pincode": 533210,
+      "Address": "fgifpjgjfjogufiojh iou8j iou9poj dfuu bu",
+      "Dapartment": "Politics",
+      "MartialStatus": "Married",
+      "PhoneNumber": [
+        "9847847647"
+      ],
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+// .row{
+//     display: flex;
+//     gap:10px;
+//     mat-form-field{
+//         width: 100%;
+//     }
+//     margin: 0 auto;
+// }
+// .content{
+//     padding-top: 10px;
+// }
+// .matdialog{
+//     width: 750px;
+// }
+// .text{
+//     width: 85%;
+// }
+.matdialog {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .row {
+    display: flex;
+    margin-bottom: 15px;
+    gap:10px;
+    width: 100%;
+    div { 
+        width: 50%;
+      .mat-mdc-form-field{
+      width: 100%;
+    }}
+  }
+  
+  // .mat-form-field {
+  //   width: 100%;
+  // }
+  
+  .mat-datepicker-toggle {
+    cursor: pointer;
+  }
+  
+  .text {
+    width: 100%;
+  }
+
+  
+  
+  /* You can add more styling as needed */
+  

@@ -1,0 +1,151 @@
+<form [formGroup]="empForm" class="matdialog" (ngSubmit)="submitForm()">
+  <h1 mat-dialog-title>Employee Form</h1>
+<div mat-dialog-content class="content">
+  <div class="row">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label >
+            First Name
+          </mat-label>
+          <input matInput placeholder="Enter Name" type="text" formControlName="firstName">
+          <mat-error *ngIf="empForm.controls['firstName'].touched && empForm.controls['firstName'].errors?.['required']">First Name Required</mat-error>
+        </mat-form-field>
+      </div>
+      <div> 
+        <mat-form-field appearance="outline">
+        <mat-label>
+          Last Name
+        </mat-label>
+        <input matInput placeholder="Enter last Name" type="text" formControlName="lastName">
+        <mat-error *ngIf="empForm.controls['lastName'].touched && empForm.controls['lastName'].errors?.['required']">Last Name Required</mat-error>
+      </mat-form-field></div>
+  </div>
+  <div class="row">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>
+          Gender
+        </mat-label>
+        <mat-select formControlName="gender">
+          <mat-option *ngFor="let Gen of Gender" [value]="Gen.value">
+            {{Gen.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div> 
+      <mat-form-field appearance="outline">
+        <mat-label>Date of birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+</div>
+<div class="row">
+  <div> 
+    <mat-form-field appearance="outline">
+    <mat-label>
+      email
+    </mat-label>
+    <input matInput placeholder="Example:- abc@gmail.com" formControlName="email">
+    <mat-error *ngIf="empForm.controls['email'].touched && empForm.controls['email'].errors?.['required']">email Required</mat-error>
+    <mat-error *ngIf="empForm.controls['email'].touched && empForm.controls['email'].errors?.['pattern']">Inavalid email</mat-error>
+  </mat-form-field>
+</div>
+<div> 
+  <mat-form-field appearance="outline">
+  <mat-label>
+    experience
+  </mat-label>
+  <input matInput type="number" placeholder="Example:- 2 years" formControlName="experience">
+  <mat-error *ngIf="empForm.controls['experience'].touched && empForm.controls['experience'].errors?.['required']">experience Required</mat-error>
+  <mat-error *ngIf="empForm.controls['experience'].touched && empForm.controls['experience'].errors?.['pattern']">Invalid value</mat-error>
+</mat-form-field></div>
+</div>
+<div class="row">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>
+        Martial Status
+      </mat-label>
+      <mat-select formControlName="martialStatus">
+        <mat-option *ngFor="let Status of MStatus" [value]="Status.value">
+          {{Status.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div> 
+    <mat-form-field appearance="outline">
+    <mat-label>
+      Department
+    </mat-label>
+    <input matInput placeholder="Enter Department" formControlName="department">
+    <mat-error *ngIf="empForm.controls['department'].touched && empForm.controls['department'].errors?.['required']">department Required</mat-error>
+    <mat-error *ngIf="empForm.controls['department'].touched && empForm.controls['department'].errors?.['pattern']">Inavlid input</mat-error>
+  </mat-form-field></div>
+</div>
+<div class="row">
+  <div> 
+    <mat-form-field appearance="outline">
+    <mat-label>
+      State
+    </mat-label>
+    <mat-select formControlName="state">
+      <mat-option *ngFor="let State of indianStates" [value]="State">
+        {{State}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field></div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>
+        pincode
+      </mat-label>
+      <input matInput type="number" placeholder="Enter pincode" formControlName="pincode">
+      <mat-error *ngIf="empForm.controls['pincode'].touched && empForm.controls['pincode'].errors?.['required']">pincode Required</mat-error>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <mat-form-field  class="text" appearance="outline">
+    <mat-label>Address</mat-label>
+    <textarea matInput formControlName="address"></textarea>
+    <mat-error *ngIf="empForm.get('address')?.touched&&empForm.get('address')?.hasError('required')">Address is required</mat-error>
+  </mat-form-field>
+</div>
+<!-- <div class="row" *ngFor="let phone of phoneNumberControls.controls;let i=index">
+  <div formArrayName="phoneNumber"> 
+    <mat-form-field appearance="outline">
+    <mat-label>
+      Phone number
+    </mat-label>
+    <input matInput placeholder="Enter phone number" [formControlName]="i">
+    <mat-error *ngIf="phoneNumberControls.controls[i].touched&& phoneNumberControls.controls[i].errors?.['required']">phone number {{i+1}} is required</mat-error>
+    <mat-error *ngIf="phoneNumberControls.controls[i].touched&& phoneNumberControls.controls[i].errors?.['pattern']">phone number {{i+1}} is not valid</mat-error>
+  </mat-form-field>
+</div>
+<button mat-raised-button color="warn" (click)="deleteNumber(i)" [disabled]="phoneNumberControls.length===1"><mat-icon class="mat-18">delete</mat-icon></button>
+</div>
+<button mat-raised-button color="accent" type="button" (click)="addPNumber()">Add number</button> -->
+<div class="row">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>
+        phone number
+      </mat-label>
+      <input type="number" matInput formControlName="phoneNumber">
+      <mat-error *ngIf="empForm.controls['phoneNumber'].touched&& empForm.controls['phoneNumber'].errors?.['required']">phone number is required</mat-error>
+      <mat-error *ngIf="empForm.controls['phoneNumber'].touched&& empForm.controls['phoneNumber'].errors?.['pattern']">Invalid Phone Number</mat-error>
+    </mat-form-field>
+  </div>
+</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="primary" type="submit" [disabled]="data? !empForm.dirty:  empForm.invalid">{{data? 'update':'save'}}</button>
+  <button mat-raised-button mat-dialog-close color="warn" type="button">Close</button>
+</div>
+</form>
+
