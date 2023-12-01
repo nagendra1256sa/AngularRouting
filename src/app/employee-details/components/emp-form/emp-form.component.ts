@@ -150,14 +150,16 @@ export class EmpFormComponent implements OnInit{
       {
         this.snackBar.open('Employee Details Update successfully done','close',{
           horizontalPosition:this.horizentalPosition,
-          verticalPosition:this.verticalPosition
+          verticalPosition:this.verticalPosition,
+          duration:3000
          })
       }
       else
       {
         this.snackBar.open('Employee registration is successfully done','close',{
           horizontalPosition:this.horizentalPosition,
-          verticalPosition:this.verticalPosition
+          verticalPosition:this.verticalPosition,
+          duration:3000
          })
       }
   }

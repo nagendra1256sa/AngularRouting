@@ -51,7 +51,7 @@ export class EmployeDetailsComponent implements OnInit {
       data:data
     }).afterClosed().subscribe({
       next:()=>{
-        this.getEmployeeDetails();
+        this.getEmployeeDetails();     
       }
     })
   }
@@ -66,6 +66,7 @@ export class EmployeDetailsComponent implements OnInit {
         this.snackbar.open("Employee details successfully deleted",'close',{
           horizontalPosition:this.horizentalView,
           verticalPosition:this.verticalView,
+          duration:3000
         })
       },
       error:(err)=>{
